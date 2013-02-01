@@ -1,5 +1,5 @@
 /**
- * github.jquery.js <https://github.com/kmacrow/github.jquery.js>
+ * jquery.github.js <https://github.com/kmacrow/jquery.github.js>
  * 
  * Copyright (C) Kalan MacRow, 2013
  * Simple GitHub widget to display most recent commits to a user's repos.
@@ -11,6 +11,7 @@
 
 (function($)
 {
+	"use strict";
 
 	var api_base = 'https://api.github.com';
 	
