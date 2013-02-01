@@ -30,7 +30,7 @@
 	function iso8601(date)
 	{
 		var  year = date.getFullYear(),
-		    month = '' + date.getMonth(), 
+		    month = '' + date.getMonth() + 1, 
 		      day = '' + date.getDate();
 
 		return year + '-'
@@ -190,30 +190,40 @@
 			getCommits(repos, function(commits) 
 			{
 				var html = '<table class="table table-bordered table-striped table-condensed">'
-						  +'<tr><td colspan="3" style="text-align:center">'
-						  +'<i class="icon-github" style="position:relative;top:3.5px"></i> '
-						  +':<small class="muted"><b>stream</b> /</small> <small>'
-						  +'<a href="https://github.com/'+ settings.user +'">'
-						  + settings.user+'</a></small></td></tr>';
+						  +'<tr>'
+						  	+'<td colspan="3" style="text-align:center">'
+						  		+'<i class="icon-github" style="position:relative;top:3.5px"></i> '
+						  		+':<small class="muted"><b>stream</b> /</small> <small>'
+						  		+'<a href="https://github.com/'+ settings.user +'">'
+						  		+ settings.user+'</a></small>'
+						  	+'</td>'
+						  +'</tr>';
 
 				for(var i = 0; i < commits.length; i++) {
+					
 					var commit = commits[i];
 					html += '<tr>';
-					html += '<td style="width:36px"><img src="'+commit.user.avatar
-							+ '" class="img-rounded" '
-							+ 'style="height:36px;width:36px" /></td>';
-					html += '<td style="border-left:0"><a style="color:#000" href="'
-							+ commit.url + '" target="_blank"><strong>' + commit.msg + '</strong></a><br />'
-							+ '<div class="visible-desktop"><small><a href="' + commit.user.url + '" target="_blank">'
-							+ commit.user.name + '</a> <span class="muted">'
-							+ ago(commit.date) + ' to </span><a href="'+commit.repo.url+'">'+commit.repo.name+'</a></small></div></td>';
-					html += '<td style="border-left:0;text-align:right">'
-							+ '<a href="'+commit.url+'" target="_blank"><span class="badge" style="font-weight:regular">'
-							+ commit.sha.substring(0,10) + '</span></a><br />'
-							+ '<small><a class="muted" target="_blank" href="'
-							+ commit.tree +'"><strong>Browse code &raquo;</strong>'
-							+ '</a></small></td>';
-					html += '</tr>';
+								+'<td style="width:36px"><img src="'+commit.user.avatar
+									+'" class="img-rounded" '
+									+'style="height:36px;width:36px" />'
+								+'</td>'
+								+'<td style="border-left:0">'
+									+'<a style="color:#000" href="'
+										+ commit.url + '" target="_blank"><strong>' + commit.msg + '</strong></a><br />'
+									+'<div class="visible-desktop"><small><a href="' + commit.user.url + '" target="_blank">'
+										+ commit.user.name + '</a> <span class="muted">'
+										+ ago(commit.date) + ' to </span>'
+										+'<a href="'+commit.repo.url+'">'+commit.repo.name+'</a></small>'
+									+'</div>'
+								+'</td>'
+								+'<td style="border-left:0;text-align:right">'
+									+'<a href="'+commit.url+'" target="_blank"><span class="badge" style="font-weight:regular">'
+										+ commit.sha.substring(0,10) + '</span></a><br />'
+									+'<small><a class="muted" target="_blank" href="'
+										+ commit.tree +'"><strong>Browse code &raquo;</strong>'
+									+ '</a></small>'
+								+'</td>'
+							+'</tr>';
 				}
 
 				html += '</table>';
