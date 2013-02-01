@@ -1,10 +1,10 @@
-# github.jquery.js
+# jquery.github.js
 
-github.jquery.js is an extremely simple plugin component based on jQuery and Bootstrap to
+An extremely simple plugin component based on jQuery and Bootstrap to
 display the <i>N</i> most recent commits across all of your repositories. It's
-modelled after GitHub's own Commits tab in the repository view.
+modelled on GitHub's own <i>Commits</i> tab in the repository view.
 
-To get started just grab the script, include it on your page along with jQuery and do
+To get started just grab the script, include it on your page (along with jQuery and Bootstrap) and do
 something like the following:
 
 ```
