@@ -187,8 +187,12 @@
 
 		getRepos(function(repos) 
 		{
+			debug(repos);
+
 			getCommits(repos, function(commits) 
 			{
+				debug(commits);
+
 				var html = '<table class="table table-bordered table-striped table-condensed">'
 						  +'<tr>'
 						  	+'<td colspan="3" style="text-align:center">'
@@ -202,7 +206,7 @@
 				for(var i = 0; i < commits.length; i++) {
 					
 					var commit = commits[i];
-					html += '<tr>';
+					html += '<tr>'
 								+'<td style="width:36px"><img src="'+commit.user.avatar
 									+'" class="img-rounded" '
 									+'style="height:36px;width:36px" />'
