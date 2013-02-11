@@ -1,6 +1,6 @@
-# jquery.github.js
+# jquery.github.js 1.0.0
 
-This plugin is the easiest way to display your most recent GitHub contributions. Thanks to Bootstrap it is responsive from large displays all the way down to phones. In the future I may provided a hosted version on GitHub pages. 
+This plugin is the easiest way to display your most recent GitHub contributions. Thanks to Bootstrap it's responsive from large displays down to phones. In the future I may provide a hosted version on GitHub pages. 
 
 <img src="http://kmacrow.github.com/images/jquery-github-js-screen.png" />
 
@@ -35,6 +35,17 @@ $(document).ready(function(){
 	});
 }); 
 ```
+
+# Build
+
+To build the code you'll need <code>uglifyjs</code>. Follow these steps:
+
+```bash
+$ git clone git://github.com/kmacrow/jquery.github.js.git
+$ sudo npm install -g uglifyjs
+$ make
+```
+
 
 # Authors
 <dl>
