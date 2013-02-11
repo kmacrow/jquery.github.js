@@ -1,12 +1,11 @@
 /**
  * jquery.github.js <https://github.com/kmacrow/jquery.github.js>
+ * The easiest way to display your most recent GitHub contributions.
  * 
  * Copyright (C) Kalan MacRow, 2013
- * Simple GitHub widget to display most recent commits to a user's repos.
  *
  * This code is MIT licensed <http://opensource.org/licenses/MIT>
- * You may use it for personal or commercial projects with or without
- * attribution. 
+ * 
 */
 
 (function($)
