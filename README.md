@@ -9,18 +9,9 @@ This plugin is the easiest way to display your most recent GitHub contributions 
 To get started you'll need to include the latest versions of <a href="http://jquery.com/download/">jQuery</a> and <a href="https://github.com/twitter/bootstrap">Bootstrap</a> on your page. Then simply add a layer where you want the plugin to render:
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<link href="bootstrap.min.css" rel="stylesheet" />
-		<script src="jquery.min.js"></script>
-	</head>
-	<body>
-		<div id="github">
-			<!-- plugin will render here... -->
-		</div>
-	</body>
-</html>
+<div id="github">
+	<!-- plugin will render here... -->
+</div>
 ```  
 
 And initialize it when the document loads:
@@ -35,6 +26,8 @@ $(document).ready(function(){
 	});
 }); 
 ```
+
+A more detailed example is available <a href="https://github.com/kmacrow/jquery.github.js/blob/master/EXAMPLE.md">here</a>.
 
 # Build
 
