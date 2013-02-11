@@ -2,7 +2,7 @@
 
 This plugin is the easiest way to display your most recent GitHub contributions with jQuery and Bootstrap. Thanks to Bootstrap, it's responsive from large displays down to phones. In the future I may provide a hosted version on GitHub Pages. 
 
-<img src="http://kmacrow.github.com/images/jquery-github-js-screen.png" />
+<img src="http://kmacrow.github.com/images/jquery-github-js-screen-2.png" />
 
 # Setup
 
