@@ -2,6 +2,7 @@
 
 This section provides a complete, working example. 
 
+* Download the minified plugin <code>jquery.github.min.js</code>
 * Copy and paste the following code into a new file <code>github.html</code>
 
 ```html
@@ -12,6 +13,9 @@ This section provides a complete, working example.
 		<link href="http://bit.ly/WcHlyO" rel="stylesheet">
 		<!-- jQuery CDN -->
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<!-- GitHub plugin -->
+		<script src="jquery.github.min.js"></script>
+
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('#github').github({
