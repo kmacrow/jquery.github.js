@@ -1,11 +1,11 @@
 /**
  * jquery.github.js <https://github.com/kmacrow/jquery.github.js>
- * The easiest way to display your most recent GitHub contributions.
  * 
  * Copyright (C) Kalan MacRow, 2013
+ * The easiest way to display your most recent GitHub contributions.
  *
  * This code is MIT licensed <http://opensource.org/licenses/MIT>
- * 
+ *
 */
 
 (function($)
@@ -82,6 +82,7 @@
 
 		$.ajax({   
 				   'url': api_base + '/users/' + settings.user + '/repos',
+			  'dataType': 'json',
 			   'success': function(data)
 			   {
 			   		if( !(data instanceof Array) ) {
@@ -132,6 +133,7 @@
 							         + settings.user 
 							         + '/' + repo.name + '/commits'),
 				   'data': {'since': since},
+			   'dataType': 'json',
 				'success': function(data) 
 				{
 					if( !(data instanceof Array) ) { 
@@ -195,10 +197,9 @@
 				var html = '<table class="table table-bordered table-striped table-condensed">'
 						  +'<tr>'
 						  	+'<td colspan="3" style="text-align:center">'
-						  		+'<i class="icon-github" style="position:relative;top:3.5px"></i> '
-						  		+':<small class="muted"><b>stream</b> /</small> <small>'
+						  		+'<small><strong>'
 						  		+'<a href="https://github.com/'+ settings.user +'">'
-						  		+ settings.user+'</a></small>'
+						  		+ settings.user+'</a> &bull; GitHub</strong></small>'
 						  	+'</td>'
 						  +'</tr>';
 
