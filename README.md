@@ -23,6 +23,7 @@ $(document).ready(function(){
 		   'user': 'you',
 		// number of commits to show
 		'display': 5
+		// optional: client_id and client_secret
 	});
 }); 
 ```
