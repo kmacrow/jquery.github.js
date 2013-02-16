@@ -17,7 +17,9 @@
 	// defaults
 	var settings = {
 		'display': 5,
-		'user': null
+		'user': null,
+		'client_id': null,
+		'client_secret': null
 	};
 
 	function debug(msg)
@@ -80,8 +82,15 @@
 	{
 		var repos = [];
 
+		var params = settings.client_id && settings.client_secret ?
+					 {    'client_id': settings.client_id,
+					  'client_secret': settings.client_secret} :
+					 {};
+
 		$.ajax({   
 				   'url': api_base + '/users/' + settings.user + '/repos',
+				  'data': params,
+				  'type': 'GET',
 			  'dataType': 'json',
 			   'success': function(data)
 			   {
@@ -109,7 +118,8 @@
 		var   index = {},
 			commits = [], 
 			    bar = repos.length,
-			  since = iso8601(new Date(Date.now() - 2629740000));;
+			  since = iso8601(new Date(Date.now() - 2629740000)),
+			  params= {};
 
 		function lower() {
 			if(--bar == 0) {
@@ -125,14 +135,22 @@
 
 			cb(commits.slice(0, settings.display));
 		} 
+
+		params.since = since;
+		if(settings.client_id && settings.client_secret) {
+			params.client_id = settings.client_id;
+			params.client_secret = settings.client_secret;
+		}
 		
 		$.each(repos, function(i, repo){
+
 
 			$.ajax({
 				    'url': (api_base + '/repos/' 
 							         + settings.user 
 							         + '/' + repo.name + '/commits'),
-				   'data': {'since': since},
+				   'type': 'GET',
+				   'data': params,
 			   'dataType': 'json',
 				'success': function(data) 
 				{
